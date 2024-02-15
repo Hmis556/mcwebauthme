@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录</title>
+    <link rel="stylesheet" href="***/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 300px;
+            padding: 16px;
+            background-color: white;
+            margin: 100px auto;
+            border: 1px solid black;
+            border-radius: 4px;
+        }
+
+        input[type=text], input[type=password] {
+            width: 100%;
+            margin: 8px 0;
+            padding: 12px 20px;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+
+        .login-form {
+            text-align: center;
+        }
+
+        i.fa {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="login-form">
+            <i class="fa fa-user"></i>
+            <h1>登录页面</h1>
+            <input type="text" id="username" name="username" placeholder="用户名" required>
+        </div>
+        <div class="login-form">
+            <i class="fa fa-lock"></i>
+            <input type="password" id="password" name="password" placeholder="密码" required>
+        </div>
+        <button type="submit" onclick="login()">登录</button>
+    </div>
+    <script>
+        function login() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            window.location.href = "login.php?username=" + username + "&password=" + password;
+        }
+    </script>
+</body>
+</html>
