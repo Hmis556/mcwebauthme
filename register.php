@@ -20,6 +20,7 @@ $username = $_POST['username'];
 $realname = $_POST['realname'];
 $password = md5($_POST['password']); // 使用MD5加密密码
 $invite_code = $_POST['invite_code'];
+$email = $_POST['email'];
 
 // 检查邀请码是否正确
 $stmt = $conn->prepare("SELECT COUNT(*) as count FROM invite_codes WHERE code = ?");
@@ -43,7 +44,7 @@ $realname = mysqli_real_escape_string($conn, $realname);
 $password = mysqli_real_escape_string($conn, $password);
 
 // 插入数据到数据库
-$sql = "INSERT INTO users (username, realname, password) VALUES ('$username', '$realname', '$password')";
+$sql = "INSERT INTO users (username, realname, password,email) VALUES ('$username', '$realname', '$password','$email')";
 $result = $conn->query($sql);
 
 if ($result) {
