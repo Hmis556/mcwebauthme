@@ -13,6 +13,16 @@ if ($captcha != $_SESSION['captcha_code']) {
 }
 
 echo '验证码正确。';
+
+          session_start();
+          if(isset($_SESSION["anti_bot_verified"])) {
+              if($_SESSION["anti_bot_verified"]) {
+                  echo "Verified";
+              } else {
+                  echo "Not verified";
+              }
+          }
+
 // 引入数据库连接文件
 require_once 'db_connect.php';
 // 接收表单数据
@@ -23,7 +33,7 @@ $invite_code = $_POST['invite_code'];
 $email = $_POST['email'];
 
 // 检查邀请码是否正确
-$stmt = $conn->prepare("SELECT COUNT(*) as count FROM invite_codes WHERE code = ?");
+$stmt = $conn->prepare("SELECT COUNT(*) as count FROM invite_codes WHERE invite_code = ?");
 $stmt->bind_param('s', $invite_code);
 $stmt->execute();
 $result = $stmt->get_result();
@@ -34,7 +44,7 @@ if ($row['count'] == 0) {
 }
 
 // 从数据库中删除邀请码
-$stmt = $conn->prepare("DELETE FROM invite_codes WHERE code = ?");
+$stmt = $conn->prepare("DELETE FROM invite_codes WHERE invite_code = ?");
 $stmt->bind_param('s', $invite_code);
 $stmt->execute();
 
@@ -44,7 +54,7 @@ $realname = mysqli_real_escape_string($conn, $realname);
 $password = mysqli_real_escape_string($conn, $password);
 
 // 插入数据到数据库
-$sql = "INSERT INTO users (username, realname, password,email) VALUES ('$username', '$realname', '$password','$email')";
+$sql = "INSERT INTO users (username, realname, password, email, invite_code) VALUES ('$username', '$realname', '$password','$email', '$invite_code')";
 $result = $conn->query($sql);
 
 if ($result) {
