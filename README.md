@@ -12,4 +12,7 @@
 <a href='https://github.com/plbin97/Antiboter-php-html-Chinese'>人机验证</a>
 <a href='https://github.com/PHPMailer/PHPMailer'>邮箱验证</a>
 <a href='https://modi.jpn.org/font_kurobara-gothic.php'>字体</a>
-<a target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=xfb19Pbw9-L19vGFtLTrpqqo" style="text-decoration:none;"><img src="http://rescdn.qqmail.com/zh_CN/htmledition/images/function/qm_open/ico_mailme_02.png"/></a>
+# 联系方式
+<h> <a target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=xfb19Pbw9-L19vGFtLTrpqqo" style="text-decoration:none;"><img src="http://rescdn.qqmail.com/zh_CN/htmledition/images/function/qm_open/ico_mailme_02.png"/></a> </h>
+# 赞助
+## 我不需要赞助请把钱给更需要的人！ <a href='https://gongyi.qq.com/succor/project_list.html'>腾讯公益</a>
