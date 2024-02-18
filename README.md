@@ -15,4 +15,4 @@
 # 联系方式
 <h> <a target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=xfb19Pbw9-L19vGFtLTrpqqo" style="text-decoration:none;"><img src="http://rescdn.qqmail.com/zh_CN/htmledition/images/function/qm_open/ico_mailme_02.png"/></a> </h>
 # 赞助
-## 我不需要赞助请把钱给更需要的人！ <a href='https://gongyi.qq.com/succor/project_list.html'>腾讯公益</a>
+## 我不需要赞助请把钱给更需要的人！ <a href='https://gongyi.qq.com/succor/project_list.htm'>腾讯公益</a>
