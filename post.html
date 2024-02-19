@@ -11,6 +11,75 @@
     <!--------------------------------------------------------------------->
 </head>
 
+    <script>
+        
+        let restrictTime = 30; // 限制访问的时长，以秒为单位
+let restrictUrl = "post.html"; // 用户访问受限制的网址
+
+function setCookie(name, value, expires, path, domain, secure) {
+  var cookieText = encodeURIComponent(name) + "=" + encodeURIComponent(value);
+
+  if (expires) {
+    cookieText += "; expires=" + expires.toUTCString();
+  }
+
+  if (path) {
+    cookieText += "; path=" + path;
+  }
+
+  if (domain) {
+    cookieText += "; domain=" + domain;
+  }
+
+  if (secure) {
+    cookieText += "; secure";
+  }
+
+  document.cookie = cookieText;
+}
+
+function getCookie(name) {
+  var cookieText = document.cookie;
+  var cookieArray = cookieText.split("; ");
+
+  for (var i = 0; i < cookieArray.length; i++) {
+    var cookie = cookieArray[i];
+
+    while (cookie.charAt(0) == " ") {
+      cookie = cookie.substring(1, cookie.length);
+    }
+
+    if (cookie.indexOf(name + "=") == 0) {
+      return decodeURIComponent(cookie.substring(name.length + 1));
+    }
+  }
+
+  return null;
+}
+
+function checkCookie(name) {
+  var cookie = getCookie(name);
+
+  if (cookie == null) {
+    return false;
+  } else {
+    return true;
+  }
+}
+
+function redirect() {
+  var time = new Date();
+  time.setTime(time.getTime() + restrictTime * 1000);
+  setCookie("restrict", time.toUTCString(), time, "/", null, false);
+  window.location.href = restrictUrl;
+}
+
+if (!checkCookie("restrict")) {
+  redirect();
+} else {
+  alert("操作过快。");
+}
+     
     <style>
     
         #captcha {
